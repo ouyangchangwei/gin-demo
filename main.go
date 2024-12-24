@@ -16,6 +16,7 @@ var (
 )
 
 func main() {
+	// 设置模式
 	mode.Set(Mode)
 
 	// 获取端口号
