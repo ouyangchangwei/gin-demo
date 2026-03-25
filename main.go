@@ -18,6 +18,7 @@ var (
 func main() {
 	// 设置模式
 	mode.Set(Mode)
+	fmt.Println("qq")
 
 	// 获取端口号
 	port := strconv.Itoa(PORT)
