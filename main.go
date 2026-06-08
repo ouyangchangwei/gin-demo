@@ -20,9 +20,12 @@ func main() {
 	mode.Set(Mode)
 
 	// 获取端口号
-	port := strconv.Itoa(PORT)
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = strconv.Itoa(PORT)
+	}
 	// 启动服务
-	fmt.Println(fmt.Sprintf("HTTP服务启动:localhost:%s", port))
+	fmt.Println(fmt.Sprintf("HTTP服务启动::%s", port))
 
 	// 创建路由
 	engine := router.Create()
