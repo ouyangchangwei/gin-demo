@@ -13,9 +13,9 @@ func Create() *gin.Engine {
 		middleware.RecoverMiddleWare(), // 异常的
 	)
 	// 配置全局路径
-	router.Group("/api/v1")
+	v1 := router.Group("/api/v1")
 	{
-		router.GET("/ping", func(c *gin.Context) {
+		v1.GET("/ping", func(c *gin.Context) {
 			c.JSON(200, gin.H{"message": "pong"})
 		})
 	}
